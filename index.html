@@ -6,7 +6,7 @@
 	<meta charset="UTF-8">
 	<meta name="format-detection" content="telephone=no">
 	<!-- <style>body{opacity: 0;}</style> -->
-	<link rel="stylesheet" href="css/style.min.css?_v=20230107212043">
+	<link rel="stylesheet" href="css/style.min.css?_v=20230108175013">
 	<link rel="shortcut icon" href="favicon.ico">
 	<!-- <meta name="robots" content="noindex, nofollow"> -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -24,9 +24,10 @@
 						<button type="button" class="menu__icon icon-menu"><span></span></button>
 						<nav class="menu__body">
 							<ul class="menu__list menu-header">
-								<li class="menu__item"><a href="" class="menu__link menu-header__link _active">Студия</a></li>
-								<li class="menu__item"><a href="" class="menu__link menu-header__link">Портфолио</a></li>
-								<li class="menu__item"><a href="" class="menu__link menu-header__link">Контакты</a></li>
+								<li class="menu__item"><a href="index.html" class="menu__link menu-header__link">Студия</a></li>
+								<li class="menu__item"><a href="portfolio.html" class="menu__link menu-header__link">Портфолио</a></li>
+								<li class="menu__item"><a class="menu__link menu-header__link">Контакты</a>
+								</li>
 							</ul>
 							<ul class="menu__list menu-contacts">
 								<li class="menu__item menu-contacts__item">
@@ -67,7 +68,7 @@
 			<section class="page__main main-section">
 				<div class="main-section__container">
 					<h1 class="main-section__title">Эффективные решения <br> для вашего бизнеса</h1>
-					<button class="main-section__button button">Заказать услугу</button>
+					<button data-popup="#popup" class="main-section__button button">Заказать услугу</button>
 				</div>
 			</section>
 			<section class="page__features features">
@@ -372,7 +373,64 @@
 			</div>
 		</footer>
 	</div>
-	<script src="js/app.min.js?_v=20230107212043"></script>
+	<div id="popup" aria-hidden="true" class="popup">
+		<div class="popup__wrapper">
+			<div class="popup__content">
+				<button data-close type="button" class="popup__close"></button>
+				<div class="popup__form form-popup">
+					<p class="form-popup__text">Оставьте свои данные, мы вам перезвоним</p>
+					<form action="" class="form-popup__box">
+						<div class="form-popup__item">
+							<label>
+								Имя
+								<input autocomplete="off" type="text" name="form[]" data-error="Error" data-required class="form-popup__input">
+								<svg width="18" height="18">
+									<use xlink:href="img/icons/icons.svg#person"></use>
+								</svg>
+							</label>
+						</div>
+						<div class="form-popup__item">
+							<label>
+								Телефон
+								<input autocomplete="off" type="tel" name="form[]" data-error="Error" data-required class="form-popup__input">
+								<svg width="18" height="18">
+									<use xlink:href="img/icons/icons.svg#telephone"></use>
+								</svg>
+							</label>
+						</div>
+						<div class="form-popup__item">
+							<label>
+								Почта
+								<input autocomplete="off" type="tel" name="form[]" data-error="Error" data-required class="form-popup__input">
+								<svg width="18" height="18">
+									<use xlink:href="img/icons/icons.svg#email-black"></use>
+								</svg>
+							</label>
+						</div>
+						<div class="form-popup__item">
+							<label>
+								Комментарий
+								<textarea autocomplete="off" name="form[]" placeholder="Введите текст" data-error="Ошибка" class="form-popup__input form-popup__textarea"></textarea>
+							</label>
+						</div>
+						<div class="form-popup__item">
+							<label>
+								<div class="checkbox">
+									<input id="c_1" data-error="Ошибка" class="checkbox__input" type="checkbox" value="1" name="form[]">
+									<label for="c_1" class="checkbox__label"><span class="checkbox__text">Соглашаюсь с
+											рассылкой и принимаю <a href="">Условия договора</a></span></label>
+								</div>
+							</label>
+						</div>
+						<div class="form-popup__item">
+							<button type="submit" class="form-popup__button button">Подписаться</button>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script src="js/app.min.js?_v=20230108175013"></script>
 </body>
 
 </html>
